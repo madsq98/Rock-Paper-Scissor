@@ -10,9 +10,13 @@
       <Button fx:id="moveRock" layoutX="14.0" layoutY="310.0" mnemonicParsing="false" onAction="#playerMoveRock" prefHeight="61.0" prefWidth="156.0" text="Rock" />
       <Button fx:id="movePaper" layoutX="222.0" layoutY="310.0" mnemonicParsing="false" onAction="#playerMovePaper" prefHeight="61.0" prefWidth="156.0" text="Paper" />
       <Button fx:id="moveScissors" layoutX="430.0" layoutY="310.0" mnemonicParsing="false" onAction="#playerMoveScissors" prefHeight="61.0" prefWidth="156.0" text="Scissors" />
-      <Label layoutX="140.0" layoutY="55.0" text="Your move:" />
-      <Label layoutX="403.0" layoutY="55.0" text="Bot move:" />
-      <TextField fx:id="playerMoveTextField" editable="false" layoutX="96.0" layoutY="96.0" />
-      <TextField fx:id="botMoveTextField" editable="false" layoutX="356.0" layoutY="96.0" />
+      <Label layoutX="139.0" layoutY="191.0" text="Your move:" />
+      <Label layoutX="403.0" layoutY="191.0" text="Bot move:" />
+      <TextField fx:id="playerMoveTextField" editable="false" layoutX="95.0" layoutY="243.0" />
+      <TextField fx:id="botMoveTextField" editable="false" layoutX="355.0" layoutY="243.0" />
+      <TextField fx:id="playerPoints" editable="false" layoutX="95.0" layoutY="50.0" />
+      <TextField fx:id="botPoints" editable="false" layoutX="355.0" layoutY="50.0" />
+      <Label layoutX="137.0" layoutY="14.0" text="Your points:" />
+      <Label layoutX="401.0" layoutY="14.0" text="Bot points:" />
    </children>
 </AnchorPane>
