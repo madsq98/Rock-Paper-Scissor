@@ -53,6 +53,17 @@ public class Player implements IPlayer {
     public Move doMove(IGameState state) {
         //Historic data to analyze and decide next move...
         ArrayList<Result> results = (ArrayList<Result>) state.getHistoricResults();
+        boolean overThirty = false;
+        ArrayList<Result> newResults = new ArrayList<>();
+        if(results.size() > 30) {
+            overThirty = true;
+
+            for(int i = results.size() - 30; i < results.size(); i++) {
+                newResults.add(results.get(i));
+            }
+        }
+
+        results = overThirty ? newResults : results;
 
         Move prevMove = getPreviousPlayerMove(results);
         Move secondPrevMove = getSecondPreviousPlayerMove(results);
