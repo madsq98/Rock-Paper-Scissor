@@ -2,11 +2,17 @@
     -fx-background-color: #25373D;
 }
 
+
 .rock{
     -fx-border-radius: 1;
     -fx-border-color: linear-gradient(from 100% 100% to 25% 25%, rgba(0,61,255,1) 0%, rgba(0,241,255,1) 100%);
     -fx-shape: "M 400 300 A 50 50 0 1 1 400 200 L 700 200 A 50 50 0 1 1 700 300 L 400 300 ";
     -fx-background-color: linear-gradient(from 25% 25% to 100% 100%, rgba(0,61,255,1) 0%, rgba(0,241,255,1) 100%);
+}
+
+.rock:hover{
+    -fx-border-color: linear-gradient(from 100% 100% to 25% 25%, rgb(170, 190, 253) 0%, rgb(173, 251, 255) 100%);
+    -fx-background-color: linear-gradient(from 25% 25% to 100% 100%, rgb(170, 190, 253) 0%, rgb(173, 251, 255) 100%);
 }
 
 .paper{
@@ -16,6 +22,11 @@
     -fx-background-color: linear-gradient(from 25% 25% to 100% 100%, rgba(0,255,127,1) 0%, rgba(0,211,255,1) 100%);
 }
 
+.paper:hover{
+    -fx-border-color: linear-gradient(from 100% 100% to 25% 25%, rgb(163, 252, 207) 0%, rgb(171, 238, 252) 100%);
+    -fx-background-color: linear-gradient(from 25% 25% to 100% 100%, rgb(163, 252, 207) 0%, rgb(171, 238, 252) 100%);
+}
+
 .scissor {
     -fx-border-radius: 1;
     -fx-border-color: linear-gradient(from 100% 100% to 25% 25%, rgba(255, 0, 96, 1) 0%, rgba(255, 149, 0, 1) 100%);
@@ -23,6 +34,10 @@
     -fx-background-color: linear-gradient(from 25% 25% to 100% 100%, rgba(255, 0, 96, 1) 0%, rgba(255, 149, 0, 1) 100%);
 }
 
+.scissor:hover{
+    -fx-border-color: linear-gradient(from 100% 100% to 25% 25%, rgb(252, 163, 196) 0%, rgb(252, 217, 169) 100%);
+    -fx-background-color: linear-gradient(from 25% 25% to 100% 100%, rgb(252, 163, 196) 0%, rgb(252, 217, 169) 100%);
+}
 .fields{
     -fx-background-color: #25373D;
     -fx-border-color: WHITE;
