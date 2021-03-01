@@ -7,7 +7,7 @@ import rps.gui.JavaFXApp;
 /**
  * Main class where we start
  *
- * @author smsj
+ * @author smsj - MADS Q, SVEND H, MIKE H, JONAS B
  */
 public class Main {
 
