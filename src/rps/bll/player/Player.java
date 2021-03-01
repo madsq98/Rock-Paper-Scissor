@@ -82,16 +82,10 @@ public class Player implements IPlayer {
     }
 
     private Move getBestNextMove(Move prevMove, Move secondPrevMove) {
-        switch(secondPrevMove) {
-            case Rock:
-                afterRock.add(prevMove);
-                break;
-            case Paper:
-                afterPaper.add(prevMove);
-                break;
-            case Scissor:
-                afterScissor.add(prevMove);
-                break;
+        switch (secondPrevMove) {
+            case Rock -> afterRock.add(prevMove);
+            case Paper -> afterPaper.add(prevMove);
+            case Scissor -> afterScissor.add(prevMove);
         }
 
         int[] prob = {0,0,0};
@@ -99,46 +93,28 @@ public class Player implements IPlayer {
         switch(prevMove) {
             case Rock:
                 for(Move m : afterRock) {
-                    switch(m) {
-                        case Rock:
-                            prob[0]++;
-                            break;
-                        case Paper:
-                            prob[1]++;
-                            break;
-                        case Scissor:
-                            prob[2]++;
-                            break;
+                    switch (m) {
+                        case Rock -> prob[0]++;
+                        case Paper -> prob[1]++;
+                        case Scissor -> prob[2]++;
                     }
                 }
                 break;
             case Paper:
                 for(Move m : afterPaper) {
-                    switch(m) {
-                        case Rock:
-                            prob[0]++;
-                            break;
-                        case Paper:
-                            prob[1]++;
-                            break;
-                        case Scissor:
-                            prob[2]++;
-                            break;
+                    switch (m) {
+                        case Rock -> prob[0]++;
+                        case Paper -> prob[1]++;
+                        case Scissor -> prob[2]++;
                     }
                 }
                 break;
             case Scissor:
                 for(Move m : afterScissor) {
-                    switch(m) {
-                        case Rock:
-                            prob[0]++;
-                            break;
-                        case Paper:
-                            prob[1]++;
-                            break;
-                        case Scissor:
-                            prob[2]++;
-                            break;
+                    switch (m) {
+                        case Rock -> prob[0]++;
+                        case Paper -> prob[1]++;
+                        case Scissor -> prob[2]++;
                     }
                 }
                 break;
@@ -147,16 +123,10 @@ public class Player implements IPlayer {
         Move returnMove = Move.Rock;
         int index = getIndexOfMax(prob);
 
-        switch(index) {
-            case 0:
-                returnMove = Move.Paper;
-                break;
-            case 1:
-                returnMove = Move.Scissor;
-                break;
-            case 2:
-                returnMove = Move.Rock;
-                break;
+        switch (index) {
+            case 0 -> returnMove = Move.Paper;
+            case 1 -> returnMove = Move.Scissor;
+            case 2 -> returnMove = Move.Rock;
         }
 
         return returnMove;
