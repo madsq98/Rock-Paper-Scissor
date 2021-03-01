@@ -8,6 +8,7 @@ import javafx.scene.control.TextField;
 import rps.bll.game.GameManager;
 import rps.bll.game.Move;
 import rps.bll.game.Result;
+import rps.bll.game.ResultType;
 import rps.bll.player.IPlayer;
 import rps.bll.player.Player;
 import rps.bll.player.PlayerType;
@@ -23,6 +24,8 @@ public class GameViewController implements Initializable {
 
     public TextField playerMoveTextField;
     public TextField botMoveTextField;
+    public TextField playerPoints;
+    public TextField botPoints;
 
     private IPlayer human;
     private IPlayer bot;
@@ -37,6 +40,9 @@ public class GameViewController implements Initializable {
         human = new Player("Human", PlayerType.Human);
         bot = new Player("Bot",PlayerType.AI);
         gm = new GameManager(human,bot);
+
+        playerPoints.setText("0");
+        botPoints.setText("0");
     }
 
     public void playerMoveRock(ActionEvent actionEvent) {
@@ -56,12 +62,22 @@ public class GameViewController implements Initializable {
 
         playerMoveTextField.setText(m.name());
 
-        if(doMove.getWinnerPlayer() == human) {
+        if(doMove.getType() == ResultType.Tie) {
+            //IT WAS A TIE
+            botMoveTextField.setText(doMove.getLoserMove().name());
+        }
+        else if(doMove.getWinnerPlayer() == human) {
             //HUMAN WON
+            int currentPoints = Integer.parseInt(playerPoints.getText());
+            int newPoints = currentPoints+1;
+            playerPoints.setText(String.valueOf(newPoints));
 
             botMoveTextField.setText(doMove.getLoserMove().name());
         } else {
             //BOT WON
+            int currentPoints = Integer.parseInt(botPoints.getText());
+            int newPoints = currentPoints+1;
+            botPoints.setText(String.valueOf(newPoints));
 
             botMoveTextField.setText(doMove.getWinnerMove().name());
         }
