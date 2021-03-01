@@ -62,7 +62,7 @@ public class Player implements IPlayer {
         if(opponentsMostFrequentMove == Move.Paper){
             return Move.Scissor;
         } else if(opponentsMostFrequentMove == Move.Rock){
-            return Move.Scissor;
+            return Move.Paper;
         } else{
             return Move.Rock;
         }
@@ -90,8 +90,10 @@ public class Player implements IPlayer {
             return Move.Rock;
         } else if(paper > rock && paper > scissor){
             return Move.Paper;
-        } else{
+        } else if(scissor > rock && scissor > paper){
             return Move.Scissor;
+        } else {
+            return Move.Rock;
         }
 
     }
