@@ -57,9 +57,7 @@ public class Player implements IPlayer {
         Move prevMove = getPreviousPlayerMove(results);
         Move secondPrevMove = getSecondPreviousPlayerMove(results);
         //Implement better AI here...
-<<<<<<< Updated upstream
-        return Move.Rock;
-=======
+
         return getBestNextMove(prevMove, secondPrevMove);
     }
 
@@ -178,6 +176,5 @@ public class Player implements IPlayer {
             }
         }
         return pos;
->>>>>>> Stashed changes
     }
 }
